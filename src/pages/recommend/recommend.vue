@@ -94,10 +94,14 @@ export default {
         this.scroller1 = new BScroll(this.$refs.scroller1[0].$el, {
           probeType: 3,
           deceleration: 0.001,
+          pullDownRefresh: true,
           bounce: true,
           bounceTime: 400,
           swipeBounceTime: 300,
           swipeTime: 2000
+        })
+        this.scroller1.on('pullingDown', () => {
+          console.log('pullingDown')
         })
       }, 0)
     })
