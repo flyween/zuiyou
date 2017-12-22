@@ -1,16 +1,16 @@
 <template>
   <div class="scroller" ref="scroller">
-    <div>
+    <div class="scroll-con">
       <div class="info-area">
-        <img src="" class="info-bg">
+        <div class="info-bg"></div>
         <div class="info-file">
           <div class="info-box">
             <div class="ava-box">
-              <img src="" class="">
+              <img src="../../assets/avatar_small.jpg">
             </div>
             <div class="info-lines">
               <div class="name-lines">
-                叫什么呢
+                スパークル
               </div>
               <div>
                 这个人很懒，什么都没有写~
@@ -37,7 +37,8 @@
           </div>
         </div>
       </div>
-      <div class="pl15 bg-white mt10">
+      <div class="space"></div>
+      <div class="pl15 bg-white">
         <div class="cat-line">
           <div class="cat-left">
             <div class="cat-item"><i class="iconfont icon-Good green"></i></div>
@@ -109,15 +110,14 @@
           </div>
         </div>
       </div>
-      <div class="pl15 bg-white mt10">
+      <div class="space"></div>
+      <div class="pl15 bg-white">
         <div class="cat-line">
           <div class="cat-left">
             <div class="cat-item"><i class="iconfont icon-moon_n yellow"></i></div>
             <div class="cat-item">夜间模式</div>
           </div>
           <div class="cat-right">
-          <!-- <div class="cat-item">11</div>
-          <div class="cat-item"><i class="iconfont icon-right"></i></div> -->
             <group>
               <x-switch title="title" v-model="nightMode" @on-change="changeTheme"></x-switch>
             </group>
@@ -144,6 +144,15 @@
           </div>
         </div>
       </div>
+      <div class="space"></div>
+    </div>
+
+    <div class="info-cover">
+      <img src="../../assets/sb.jpg">
+    </div>
+
+    <div class="top-bar">
+      スパークル
     </div>
   </div>
 </template>
@@ -177,7 +186,17 @@ export default {
         click: true
       })
       this.mainScroll.on('scroll', (e) => {
-        console.log(e)
+        let scaleNum = e.y > 0 ? Math.round(e.y) / (20 + Math.round(e.y) / 2) : 0.5
+        let infoCover = document.querySelector('.info-cover')
+        infoCover.style.tranformOrigin = 'top center'
+        let topBar = document.querySelector('.top-bar')
+        if (scaleNum >= 1) infoCover.style.webkitTransform = 'scale(' + scaleNum + ')'
+        if (e.y < -30) {
+          topBar.style.display = 'block'
+          topBar.style.opacity = Math.round((-e.y / 90) * 10) / 10
+        } else {
+          if (topBar) topBar.style.display = 'none'
+        }
       })
     },
     routerTo (param) {
@@ -200,14 +219,43 @@ export default {
   @bgc: #fff;
   @grey3: #C1C7D1;
   .scroller {
+    position: relative;
     height: 100%;
     text-align: left;
-    overflow-y: auto;
+  }
+  .scroll-con {
+    position: relative;
+    z-index: 2;
+  }
+  .top-bar {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    background-color: #fff;
+    opacity: 0.4;
+    font-size: .8rem;
+    text-align: center;
+  }
+  .space {
+    height: 10px;
+    background-color: #F5F5F5;
   }
   .info-bg {
     display: block;
     height: 7.33rem;
-    background-color: #000;
+  }
+  .info-cover {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    img {
+      width: 100%;
+    }
   }
   .info-file {
     position: relative;
@@ -233,6 +281,10 @@ export default {
     height: 2.5rem;
     background-color: #fff;
     border-radius: 50%;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
   }
   .info-lines {
   }
@@ -267,9 +319,6 @@ export default {
   .pl15 {
     padding-left: 15px;
     line-height: 2.14rem;
-  }
-  .mt10 {
-    margin-top: 10px;
   }
   .bg-white {
     background-color: #fff;
@@ -308,6 +357,13 @@ export default {
   .cat-right {
     .weui-cells {
       margin-top: 0;
+    }
+    .vux-x-switch.weui-cell_switch {
+      padding-top: 9px;
+      padding-bottom: 9px;
+    }
+    .weui-cells:before,.weui-cells:after {
+      display: none;
     }
   }
   .weui-switch:checked {

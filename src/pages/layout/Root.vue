@@ -20,6 +20,7 @@ export default {
 </script>
 <style scoped lang="less">
 .root {
+  position: relative;
   height: 100%;
   padding-bottom: 1.87rem;  
 }

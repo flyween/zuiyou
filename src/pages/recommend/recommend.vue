@@ -90,15 +90,16 @@ export default {
     this.swiperHeight = this.$refs.swiper.$el.offsetHeight + 'px'
     this.heightStyle = 'height:' + this.$refs.swiper.$el.offsetHeight + 'px'
     this.$nextTick(() => {
-      this.scroller1 = new BScroll(this.$refs.scroller1[0].$el, {
-        probeType: 3,
-        deceleration: 0.001,
-        bounce: true,
-        bounceTime: 400,
-        swipeBounceTime: 300,
-        swipeTime: 2000
-      })
-      // this.scroller1.refresh()
+      setTimeout(() => {
+        this.scroller1 = new BScroll(this.$refs.scroller1[0].$el, {
+          probeType: 3,
+          deceleration: 0.001,
+          bounce: true,
+          bounceTime: 400,
+          swipeBounceTime: 300,
+          swipeTime: 2000
+        })
+      }, 0)
     })
   }
 }
