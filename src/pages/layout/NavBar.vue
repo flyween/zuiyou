@@ -40,6 +40,7 @@ export default {
   height: 1.87rem;
   align-items: center;
   background: #fff;
+  border-top: 1px solid #efefef;
 }
 .bar-item {
   flex: 1;

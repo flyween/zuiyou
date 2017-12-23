@@ -3,14 +3,14 @@
     <div class="tab-container">
 
       <div class="main-tab">
-          <tab v-model="index">
+          <tab v-model="index" custom-bar-width="20%" bar-active-color="rgb(3,175,254)" active-color="rgb(3,175,254)">
           <tab-item @on-item-click="onItemClick" v-for="(item, index) in list" :key="index">{{item.name}}</tab-item>
           </tab>
       </div>
       <swiper v-model="index" :show-dots="false" class="swiper-con" ref="swiper" :height="swiperHeight">
           <swiper-item v-for="(item, index) in list" :key="index" class="swiper-item" :ref="item.ref" :style="heightStyle">
             <div class="list-container">
-              <div class="list-box" v-for="n in 5" :key="n">
+              <div class="list-box" v-for="n in 5" :key="n" @click="seeDetail">
                 <div class="box-tit">
                   <div class="box-ava">
                     <img src="../../assets/avatar_small.jpg">
@@ -35,21 +35,30 @@
       </swiper>
        
     </div>
+
+    <PageDetail :show="show9"></PageDetail>
+
 </div>
 </template>
 
 <script>
 // import Vue from 'vue'
-import { Tab, TabItem, Swiper, SwiperItem } from 'vux'
+import { TransferDom, Tab, TabItem, Swiper, SwiperItem, Popup } from 'vux'
+import PageDetail from '@/components/PageDetail'
 import BScroll from 'better-scroll'
 
 export default {
   name: 'Recommend',
+  directives: {
+    TransferDom
+  },
   components: {
     Tab,
     TabItem,
     Swiper,
-    SwiperItem
+    SwiperItem,
+    Popup,
+    PageDetail
   },
   data () {
     return {
@@ -74,16 +83,15 @@ export default {
       ],
       swiperHeight: '',
       heightStyle: '',
-      scroller1: null
+      scroller1: null,
+      show9: false
     }
   },
   methods: {
     onItemClick () {},
-    loadBottom () {
-      console.log('bottom')
-    },
-    handleBottomChange (status) {
-      this.bottomStatus = status
+    seeDetail () {
+      // this.show9 = !this.show9
+      // this.$router.push({path: '', query: { plan: 'private' }})
     }
   },
   mounted () {
@@ -109,7 +117,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 @primaryBlue: #03AFFE;
 .hello {
@@ -149,13 +156,6 @@ export default {
 .swiper-item {
   height: 100%;
 }
-// .vux-tab .vux-tab-item.vux-tab-selected {
-//   color: #03AFFE;
-//   border-color: #03AFFE;
-// }
-// .vux-tab-ink-bar {
-//   background-color: #03AFFE;
-// }
 //list style
 .list-container {
   // min-height: 100%;
@@ -213,12 +213,12 @@ export default {
 }
 </style>
 <style lang="less">
-.vux-tab .vux-tab-item.vux-tab-selected {
-    color: #03AFFE !important;
-    border-color: #03AFFE !important;
-}
-.vux-tab-ink-bar {
-  background-color: #03AFFE !important;
-}
+// .vux-tab .vux-tab-item.vux-tab-selected {
+//     color: #03AFFE !important;
+//     border-color: #03AFFE !important;
+// }
+// .vux-tab-ink-bar {
+//   background-color: #03AFFE !important;
+// }
 </style>
 

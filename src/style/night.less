@@ -1,12 +1,28 @@
 .night {
     div{
         transition: all .3s;
-        .list-box,.vux-tab,.main-tab,.nav-bar {
+        .vux-swipeout-content,
+        .list-box,
+        .vux-tab,
+        .main-tab,
+        .nav-bar {
             background-color: #000;
         }
         .bar-container {
             background-color: rgb(48, 47, 47);
         }
+        .ms-item {
+            border-bottom-color: #474747;
+        }
+        .ms-com {
+            background-color: #313131;
+        }
+        .vux-tab .vux-tab-item {
+            background: linear-gradient(180deg, #000, #000, rgba(229, 229, 229, 0)) bottom left no-repeat;
+        }
+    }
+    .root {
+        background-color: #131313;
     }
     &#app{
         transition: all .3s;
