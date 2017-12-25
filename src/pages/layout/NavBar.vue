@@ -44,12 +44,14 @@ export default {
 }
 .bar-item {
   flex: 1;
-  font-size: .5rem;
+  padding: .1rem 0;
+  height: 100%;
+  font-size: .4rem;
   &.on {
     color: #03AFFE;
   }
   i {
-    font-size: 1rem;
+    font-size: .8rem;
   }
 }
 </style>

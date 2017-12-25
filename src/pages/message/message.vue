@@ -13,7 +13,7 @@
               </div>
               <div class="ms-4-item">
                 <div>{{msg.person}} 等人</div>
-                <div>{{msg.num}}</div>
+                <div><i class="iconfont icon-up1 blue"></i> {{msg.num}}</div>
               </div>
               <div class="ms-1-item">
                 <div class="ms-com">
@@ -204,5 +204,10 @@ export default {
   font-size: .6rem;
   line-height: .8rem;
   text-align: center;
+}
+.iconfont {
+  &.blue {
+    color: #03AFFE;
+  }
 }
 </style>
