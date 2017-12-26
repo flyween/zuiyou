@@ -9,7 +9,7 @@
             </div>
             <div slot="content" class="vux-1px-t ms-item">
               <div class="ms-1-item">
-                <img src="../../assets/avatar_small.jpg" class="ava">
+                <img src="../../assets/avatar.jpg" class="ava">
               </div>
               <div class="ms-4-item">
                 <div>{{msg.person}} 等人</div>
@@ -33,7 +33,7 @@
             </div>
             <div slot="content" class="vux-1px-t ms-item">
               <div class="ms-1-item">
-                <img src="../../assets/avatar_small.jpg" class="ava">
+                <img src="../../assets/avatar.jpg" class="ava">
               </div>
               <div class="ms-4-item">
                 <div>小d、小e、小f 等人</div>

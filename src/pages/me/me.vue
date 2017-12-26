@@ -6,7 +6,7 @@
         <div class="info-file">
           <div class="info-box">
             <div class="ava-box">
-              <img src="../../assets/avatar_small.jpg">
+              <img src="../../assets/avatar.jpg">
             </div>
             <div class="info-lines">
               <div class="name-lines">
@@ -38,7 +38,7 @@
         </div>
       </div>
       <div class="space"></div>
-      <div class="pl15 bg-white">
+      <div class="pl15 block-bg">
         <div class="cat-line">
           <div class="cat-left">
             <div class="cat-item"><i class="iconfont icon-Good green"></i></div>
@@ -111,7 +111,7 @@
         </div>
       </div>
       <div class="space"></div>
-      <div class="pl15 bg-white">
+      <div class="pl15 block-bg">
         <div class="cat-line">
           <div class="cat-left">
             <div class="cat-item"><i class="iconfont icon-moon_n yellow"></i></div>
@@ -320,7 +320,7 @@ export default {
     padding-left: 15px;
     line-height: 2.14rem;
   }
-  .bg-white {
+  .block-bg {
     background-color: #fff;
   }
   .cat-line {

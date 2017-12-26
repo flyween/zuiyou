@@ -1,3 +1,5 @@
+@darkColor: #6b6969;
+@greyBg: #252525;
 .night {
     div{
         transition: all .3s;
@@ -5,8 +7,9 @@
         .list-box,
         .vux-tab,
         .main-tab,
+        .top-bar,
         .nav-bar {
-            background-color: #000;
+            background-color: @greyBg;
         }
         .bar-container {
             background-color: rgb(48, 47, 47);
@@ -14,15 +17,32 @@
         .ms-item {
             border-bottom-color: #474747;
         }
-        .ms-com {
-            background-color: #313131;
+        .ms-com, .bot-con .tab-wrap, .space {
+            background-color: #000;
         }
         .vux-tab .vux-tab-item {
             background: linear-gradient(180deg, #000, #000, rgba(229, 229, 229, 0)) bottom left no-repeat;
         }
+        .swiper-con {
+            color: @darkColor;
+            background-color: @greyBg;
+        }
+        .dis-item, .nav-bar {
+            border-color: @darkColor;
+        }
+        // me
+        .info-file, .info-data, .block-bg, .weui-cells {
+            background-color: @greyBg;
+        }
+        .info-box {
+            color: @darkColor;
+        }
+        .cat-line {
+            border-color: @darkColor;
+        }
     }
     .root {
-        background-color: #131313;
+        background-color: #000;
     }
     &#app{
         transition: all .3s;

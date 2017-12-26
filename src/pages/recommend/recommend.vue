@@ -13,7 +13,7 @@
               <div class="list-box" v-for="n in 5" :key="n" @click="seeDetail">
                 <div class="box-tit">
                   <div class="box-ava">
-                    <img src="../../assets/avatar_small.jpg">
+                    <img src="../../assets/avatar.jpg">
                   </div>
                   <div class="box-alia">纯属虚构</div>
                   <div class="box-close"><i class="iconfont icon-close"></i></div>
@@ -212,13 +212,3 @@ export default {
   }
 }
 </style>
-<style lang="less">
-// .vux-tab .vux-tab-item.vux-tab-selected {
-//     color: #03AFFE !important;
-//     border-color: #03AFFE !important;
-// }
-// .vux-tab-ink-bar {
-//   background-color: #03AFFE !important;
-// }
-</style>
-
