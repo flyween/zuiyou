@@ -8,7 +8,8 @@ const state = {
   direction: 'forward',
   noSlide: true,
   routerName: 'recommend',
-  nightMode: false
+  nightMode: false,
+  pageDetail: false
 }
 
 export default new Vuex.Store({
@@ -28,6 +29,9 @@ export default new Vuex.Store({
     },
     TOGGLE_NIGHT (state, payload) {
       state.nightMode = payload.nightMode
+    },
+    TOGGLE_PAGE_DETAIL (state, payload) {
+      state.pageDetail = payload.pageDetail
     }
   }
 })

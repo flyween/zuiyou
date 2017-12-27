@@ -19,14 +19,14 @@ if ('addEventListener' in document) {
 
 Vue.config.productionTip = false
 
-const menuPath = '/,/follow,/discover,/message,/me'
+const menuPath = '/recommend,/follow,/discover,/message,/me'
 router.beforeEach(function (to, from, next) {
   if (menuPath.indexOf(to.path) >= 0 && menuPath.indexOf(from.path) >= 0) {
     // nothing
     store.commit('UPDATE_SLIDE', {noslide: true})
   } else {
     store.commit('UPDATE_SLIDE', {noslide: false})
-    if (menuPath.indexOf(to.path) > 0) {
+    if (menuPath.indexOf(to.path) >= 0) {
       store.commit('UPDATE_DIRECTION', {direction: 'reserve'})
     } else {
       store.commit('UPDATE_DIRECTION', {direction: 'forward'})

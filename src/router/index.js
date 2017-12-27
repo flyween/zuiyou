@@ -8,6 +8,7 @@ const Discover = () => import('@/pages/discover/discover')
 const Message = () => import('@/pages/message/message')
 const Me = () => import('@/pages/me/me')
 const Comments = () => import('@/pages/me/comments')
+const PageDetail = () => import('@/components/PageDetail')
 
 Vue.use(Router)
 
@@ -16,16 +17,24 @@ export default new Router({
   routes: [
     {
       path: '/',
+      redirect: 'recommend',
       name: 'root',
       component: Root,
       children: [
-        {path: '', component: Recommend},
+        {path: 'recommend', component: Recommend},
         {path: 'follow', component: Follow},
         {path: 'discover', component: Discover},
         {path: 'message', component: Message},
-        {path: 'me', component: Me},
-        {path: 'comments', component: Comments}
+        {path: 'me', component: Me}
       ]
+    },
+    {
+      path: '/detail',
+      component: PageDetail
+    },
+    {
+      path: '/comments',
+      component: Comments
     }
   ]
 })

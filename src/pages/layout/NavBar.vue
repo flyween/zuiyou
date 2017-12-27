@@ -1,6 +1,6 @@
 <template>
   <div class="nav-bar">
-    <div class="bar-item" @click="routerTo('/')" :class="{on: routerName === ''}"><div><i class="iconfont icon-me"></i></div><div>推荐</div></div>
+    <div class="bar-item" @click="routerTo('/recommend')" :class="{on: routerName === ''}"><div><i class="iconfont icon-me"></i></div><div>推荐</div></div>
     <div class="bar-item" @click="routerTo('/follow')" :class="{on: routerName === 'follow'}"><div><i class="iconfont icon-guanzhu"></i></div><div>关注</div></div>
     <div class="bar-item" @click="routerTo('/discover')" :class="{on: routerName === 'discover'}"><div><i class="iconfont icon-paperplane"></i></div><div>发现</div></div>
     <div class="bar-item" @click="routerTo('/message')" :class="{on: routerName === 'message'}"><div><i class="iconfont icon-weibiaoti302"></i></div><div>消息</div></div>

@@ -36,22 +36,16 @@
        
     </div>
 
-    <PageDetail :show="show9"></PageDetail>
-
 </div>
 </template>
 
 <script>
-// import Vue from 'vue'
-import { TransferDom, Tab, TabItem, Swiper, SwiperItem, Popup } from 'vux'
+import { Tab, TabItem, Swiper, SwiperItem, Popup } from 'vux'
 import PageDetail from '@/components/PageDetail'
 import BScroll from 'better-scroll'
 
 export default {
   name: 'Recommend',
-  directives: {
-    TransferDom
-  },
   components: {
     Tab,
     TabItem,
@@ -83,15 +77,13 @@ export default {
       ],
       swiperHeight: '',
       heightStyle: '',
-      scroller1: null,
-      show9: false
+      scroller1: null
     }
   },
   methods: {
     onItemClick () {},
     seeDetail () {
-      // this.show9 = !this.show9
-      // this.$router.push({path: '', query: { plan: 'private' }})
+      this.$router.push({path: 'detail'})
     }
   },
   mounted () {
