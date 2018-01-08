@@ -1,6 +1,6 @@
 # zuiyou-web
 
-> zuiyou mobile web page
+> zuiyou mobile web page(Wish this project having some value)
 
 本项目主要使用到的库或者工具如下：
 
