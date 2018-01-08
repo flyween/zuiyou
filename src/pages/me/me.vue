@@ -119,7 +119,7 @@
           </div>
           <div class="cat-right">
             <group>
-              <x-switch title="title" v-model="nightMode" @on-change="changeTheme"></x-switch>
+              <x-switch title="" v-model="nightSwitch" @on-change="changeTheme"></x-switch>
             </group>
           </div>
         </div>
@@ -161,6 +161,7 @@
 import { XSwitch, Group } from 'vux'
 import BScroll from 'better-scroll'
 import store from '@/store'
+import { mapState } from 'vuex'
 
 export default {
   name: 'Me',
@@ -171,7 +172,7 @@ export default {
   data () {
     return {
       mainScroll: null,
-      nightMode: false
+      nightSwitch: false
     }
   },
   methods: {
@@ -204,10 +205,16 @@ export default {
     },
     changeTheme () {
       // this.$emit('nightMode', this.nightMode)
-      store.commit('TOGGLE_NIGHT', {nightMode: this.nightMode})
+      store.commit('TOGGLE_NIGHT', {nightMode: this.nightSwitch})
     }
   },
+  computed: {
+    ...mapState({
+      nightMode: state => state.nightMode
+    })
+  },
   mounted () {
+    this.nightSwitch = this.nightMode
     this.$nextTick(() => {
       this.initScroller()
     })
