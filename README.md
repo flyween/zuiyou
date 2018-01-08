@@ -1,6 +1,7 @@
 # zuiyou-web
 
-> zuiyou mobile web page(Wish this project having some value)
+> zuiyou mobile web page  
+Wish this project having some tiny value
 
 本项目主要使用到的库或者工具如下：
 
