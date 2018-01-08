@@ -12,12 +12,15 @@
 ## Features
 - 漂亮的UI(详情见下列Gif)，完美的体验
 - nice VUX && nice Better-scroll
-- 暂时还没有想到其他的
+- etc
 ## Todo
 
-- [ ] 视频播放及弹幕
-- [ ] Popup Component
+- [ ] ~~视频播放及弹幕~~(:confounded:mobile端web视频是真的不好做，尤其mobileSafari默认使用自己的video控制面板)
+- [ ] ~~Popup Component~~(考虑到弹窗时浏览器后退不是隐藏弹窗而是后退地址，所以某些组件取消popup形式)
 - [x] 夜间模式
+
+## Overview
+![overview](./static/overview.gif)
 
 ## Build Setup
 
